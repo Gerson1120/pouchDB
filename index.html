@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Only Cache Agenda</title>
+
+    <!-- PWA Meta -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+
+    <!-- iOS Friendly -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="./images/icons/192.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Gestión de Tareas</h1>
+    </header>
+
+    <main>
+        <!-- Usamos una etiqueta <form> para la entrada de datos -->
+        <form id="taskForm">
+            <fieldset>
+                <legend>Nueva Tarea</legend>
+                <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div>
+                    <label for="fecha">Fecha</label>
+                    <input type="date" id="fecha" required>
+                </div>
+                <button type="submit" id="btnAdd">Agregar tarea</button>
+            </fieldset>
+        </form>
+
+        <!-- Contenedor para la lista de tareas, ya existe en el HTML -->
+        <div id="taskList" class="task-container">
+            <!-- Las tareas se insertarán aquí con JavaScript -->
+        </div>
+    </main>
+
+    <!-- Librería PouchDB -->
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
+    
+    <!-- Scripts de la aplicación -->
+    <script src="main.js"></script>
+    <script src="/scripts/app.js"></script> <!-- ¡IMPORTANTE! Faltaba este script -->
+
+</body>
+</html>
